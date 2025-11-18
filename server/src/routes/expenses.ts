@@ -5,13 +5,14 @@ const router = Router();
 const prisma = new PrismaClient();
 
 // GET /expenses → 全取得
-router.get('/', async (req, res) => {
+// Express では「使わないエラー引数は _err」にするのが一般的
+router.get('/', async (req, res) => { 
   try {
-    const expenses = await prisma.expense.findMany({
+    const expenses = await prisma.expense.findMany({ 
       orderBy: { spentAt: 'desc' },
     });
     res.json(expenses);
-  } catch (err) {
+  } catch (_err) {
     res.status(500).json({ error: '取得に失敗しました' });
   }
 });
