@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
       orderBy: { spentAt: 'desc' },
     });
     res.json(expenses);
-  } catch (_err) {
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ error: '取得に失敗しました' });
   }
 });
@@ -25,6 +26,7 @@ router.post('/', async (req, res) => {
     });
     res.json(expense);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: '登録に失敗しました' });
   }
 });
@@ -38,6 +40,7 @@ router.put('/:id', async (req, res) => {
     });
     res.json(expense);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: '更新に失敗しました' });
   }
 });
@@ -50,6 +53,7 @@ router.delete('/:id', async (req, res) => {
     });
     res.json({ message: '削除しました' });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: '削除に失敗しました' });
   }
 });
