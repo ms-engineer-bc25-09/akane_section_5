@@ -8,7 +8,9 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "seed": "node prisma/seed.js",
-    "prisma:seed": "npx prisma db seed"
+    "prisma:seed": "npx prisma db seed",
+      "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
