@@ -30,33 +30,45 @@ describe('calcBalance', () => {
     });
 
     it('収入が数値でない（NaN）の場合はエラー', () => {
-      expect(() => calcBalance(NaN, 1000)).toThrow('収入には数値を入力してください');
+      expect(() => calcBalance(NaN, 1000)).toThrow(
+        '収入には数値を入力してください'
+      );
     });
 
     it('支出が数値でない（NaN）の場合はエラー', () => {
-      expect(() => calcBalance(1000, NaN)).toThrow('支出には数値を入力してください');
+      expect(() => calcBalance(1000, NaN)).toThrow(
+        '支出には数値を入力してください'
+      );
     });
 
     it('収入が無限大の場合はエラー', () => {
-      expect(() => calcBalance(Infinity, 1000))
-        .toThrow('収入と支出には正しい数値を入力してください');
+      expect(() => calcBalance(Infinity, 1000)).toThrow(
+        '収入と支出には正しい数値を入力してください'
+      );
     });
 
     it('支出が無限大の場合はエラー', () => {
-      expect(() => calcBalance(1000, Infinity))
-        .toThrow('収入と支出には正しい数値を入力してください');
+      expect(() => calcBalance(1000, Infinity)).toThrow(
+        '収入と支出には正しい数値を入力してください'
+      );
     });
 
     it('収入がマイナスの場合はエラー', () => {
-      expect(() => calcBalance(-1, 1000)).toThrow('収入にマイナスは入力できません');
+      expect(() => calcBalance(-1, 1000)).toThrow(
+        '収入にマイナスは入力できません'
+      );
     });
 
     it('支出がマイナスの場合はエラー', () => {
-      expect(() => calcBalance(1000, -1)).toThrow('支出にマイナスは入力できません');
+      expect(() => calcBalance(1000, -1)).toThrow(
+        '支出にマイナスは入力できません'
+      );
     });
 
     it('金額が大きすぎる場合はエラー', () => {
-      expect(() => calcBalance(2_000_000_000, 1000)).toThrow('金額が大きすぎます');
+      expect(() => calcBalance(2_000_000_000, 1000)).toThrow(
+        '金額が大きすぎます'
+      );
     });
   });
 });

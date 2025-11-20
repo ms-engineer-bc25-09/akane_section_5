@@ -8,9 +8,24 @@ async function main() {
 
   await prisma.expense.createMany({
     data: [
-      { title: 'ランチ', amount: -800, category: '食費', spentAt: new Date('2025-11-01') },
-      { title: '給料', amount: 250000, category: '収入', spentAt: new Date('2025-11-01') },
-      { title: '電車代', amount: -320, category: '交通費', spentAt: new Date('2025-11-02') },
+      {
+        title: 'ランチ',
+        amount: -800,
+        category: '食費',
+        spentAt: new Date('2025-11-01'),
+      },
+      {
+        title: '給料',
+        amount: 250000,
+        category: '収入',
+        spentAt: new Date('2025-11-01'),
+      },
+      {
+        title: '電車代',
+        amount: -320,
+        category: '交通費',
+        spentAt: new Date('2025-11-02'),
+      },
     ],
   });
 }

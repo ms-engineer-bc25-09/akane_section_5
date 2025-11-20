@@ -6,9 +6,9 @@ const prisma = new PrismaClient();
 
 // GET /expenses → 全取得
 // Express では「使わないエラー引数は _err」にするのが一般的
-router.get('/', async (req, res) => { 
+router.get('/', async (req, res) => {
   try {
-    const expenses = await prisma.expense.findMany({ 
+    const expenses = await prisma.expense.findMany({
       orderBy: { spentAt: 'desc' },
     });
     res.json(expenses);
